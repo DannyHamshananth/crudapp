@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
   const router = useRouter()
   const [id, setId] = useState(params.id);
   const [name, setName] = useState('');
@@ -82,4 +82,4 @@ const page = ({ params }) => {
   )
 }
 
-export default page
+export default Page
