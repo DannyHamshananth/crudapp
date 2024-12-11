@@ -4,7 +4,7 @@ import { PencilIcon, Trash } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
-const create = () => {
+const Create = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -70,4 +70,4 @@ const create = () => {
   )
 }
 
-export default create
+export default Create
