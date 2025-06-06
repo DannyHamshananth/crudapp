@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
-export async function GET(req, { params }) {
+export default async function GET(req, { params }) {
   const { id } = params;
 
   try {
@@ -28,7 +28,7 @@ export async function GET(req, { params }) {
   }
 }
 
-export async function PUT(req, { params }) {
+export default async function PUT(req, { params }) {
     const { id } = params;
     const formData = await req.formData();
 
@@ -54,7 +54,7 @@ export async function PUT(req, { params }) {
     }
 }
 
-export async function DELETE(req, { params }) {
+export default async function DELETE(req, { params }) {
     const { id } = params;
   
     try {
@@ -69,4 +69,4 @@ export async function DELETE(req, { params }) {
         headers: { 'Content-Type': 'application/json' },
       });
     }
-  }
+}
