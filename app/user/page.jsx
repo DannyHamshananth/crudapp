@@ -37,32 +37,25 @@ const Create = () => {
             </tr>
           </thead>
           <tbody>
-            { users.length > 0
-              ? (users.map((user, index) => (
-                  <tr className="bg-gray-50" key={index}>
-                    <td className="px-6 py-4 border-b">{user.id}</td>
-                    <td className="px-6 py-4 border-b">{user.name}</td>
-                    <td className="px-6 py-4 border-b">{user.email}</td>
-                    <td className="px-6 py-4 text-center border-b">
-                      <Link href={`/user/edit/${user.id}`}>
-                        <Button className="bg-green-900 hover:bg-green-200" >
-                          <PencilIcon/>
-                        </Button>
-                      </Link>
-                    </td>
-                    <td className="px-6 py-4 text-center border-b">
-                      <Button className="bg-red-700 hover:bg-pink-300" onClick={(id)=>{handleDelete(user.id)}}>
-                        <Trash/>
-                      </Button>
-                    </td>
-                  </tr>
-                )))
-              : (
-                <tr className="bg-gray-50 text-center">
-                  <td colspan="5" className="px-6 py-4 border-b text-center">No users has been created yet!</td>
-                </tr>
-              )
-            }
+            {users.map((user, index) => (
+              <tr className="bg-gray-50" key={index}>
+                <td className="px-6 py-4 border-b">{user.id}</td>
+                <td className="px-6 py-4 border-b">{user.name}</td>
+                <td className="px-6 py-4 border-b">{user.email}</td>
+                <td className="px-6 py-4 text-center border-b">
+                  <Link href={`/user/edit/${user.id}`}>
+                    <Button className="bg-green-900 hover:bg-green-200" >
+                      <PencilIcon/>
+                    </Button>
+                  </Link>
+                </td>
+                <td className="px-6 py-4 text-center border-b">
+                  <Button className="bg-red-700 hover:bg-pink-300" onClick={(id)=>{handleDelete(user.id)}}>
+                    <Trash/>
+                  </Button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
     </div>
